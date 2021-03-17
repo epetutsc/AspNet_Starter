@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+  </PropertyGroup>
+    
+  <ItemGroup>
+    <ProjectReference Include="..\EndpointConfiguration.Contracts\EndpointConfiguration.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
