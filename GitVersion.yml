@@ -1,0 +1,10 @@
+tag-prefix: ''
+branches:
+  develop:
+    tag: alpha
+  release:
+    mode: ContinuousDeployment
+    tag: beta
+  master:
+    tag: ''
+next-version: 0.1
