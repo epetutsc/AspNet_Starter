@@ -56,6 +56,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleService", "src\Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleService.Contracts", "src\Services\SimpleService\SimpleService.Contracts\SimpleService.Contracts.csproj", "{1637CA72-3858-43AA-ABB5-9A9CA2E610BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dummy.Tests", "tests\Dummy.Tests\Dummy.Tests.csproj", "{961DEA9D-49AD-46D6-AC8A-1787AFC28143}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -94,6 +96,10 @@ Global
 		{1637CA72-3858-43AA-ABB5-9A9CA2E610BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1637CA72-3858-43AA-ABB5-9A9CA2E610BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1637CA72-3858-43AA-ABB5-9A9CA2E610BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{961DEA9D-49AD-46D6-AC8A-1787AFC28143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{961DEA9D-49AD-46D6-AC8A-1787AFC28143}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{961DEA9D-49AD-46D6-AC8A-1787AFC28143}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{961DEA9D-49AD-46D6-AC8A-1787AFC28143}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,6 +119,7 @@ Global
 		{967E607A-6CD1-41C0-AA80-15301981967E} = {AA29641B-BC92-42AC-9225-B147412BF510}
 		{3A2E05D8-CBA3-4143-B5E4-78460CE61F19} = {967E607A-6CD1-41C0-AA80-15301981967E}
 		{1637CA72-3858-43AA-ABB5-9A9CA2E610BA} = {967E607A-6CD1-41C0-AA80-15301981967E}
+		{961DEA9D-49AD-46D6-AC8A-1787AFC28143} = {32935EC7-D2E9-474E-8DE8-A68C5BE115F0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9B3A0B06-3F1C-44FF-810A-7AE391192FD9}

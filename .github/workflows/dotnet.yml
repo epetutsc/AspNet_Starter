@@ -24,4 +24,13 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --logger "trx;LogFileName=test-results.trx" --no-build --verbosity normal
+    - name: Test Reporter
+      uses: dorny/test-reporter@v1.4.2
+      if: success() || failure()
+      with: 
+        name: Tests
+        path: 'tests/**/*.trx'
+        reporter: dotnet-trx
+        fail-on-error: true
+
