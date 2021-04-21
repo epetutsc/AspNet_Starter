@@ -1,4 +1,4 @@
-using Xunit;
+﻿using Xunit;
 
 namespace Dummy.Tests
 {
@@ -7,7 +7,7 @@ namespace Dummy.Tests
         [Fact]
         public void AlwaysTrue()
         {
-            Assert.True(true);
+            Assert.True(false);
         }
     }
 }
