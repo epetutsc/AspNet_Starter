@@ -7,7 +7,7 @@ namespace Dummy.Tests
         [Fact]
         public void AlwaysTrue()
         {
-            Assert.True(false);
+            Assert.True(true);
         }
     }
 }
