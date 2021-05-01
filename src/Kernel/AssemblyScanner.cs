@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace Kernel
 {
-    public class AssemblyScanner
+    public class AssemblyScanner : IAssemblyScanner
     {
         private readonly string _baseDirectory;
 
@@ -35,7 +35,7 @@ namespace Kernel
             }
         }
 
-        public IEnumerable<Type> GetClassesImplementing<T>()
+        public IEnumerable<Type> GetClassesOfType<T>()
         {
             return Assemblies
                 .SelectMany(assembly => assembly

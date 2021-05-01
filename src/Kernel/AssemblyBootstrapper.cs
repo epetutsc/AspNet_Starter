@@ -3,14 +3,21 @@ using System.Linq;
 
 namespace Kernel
 {
-    public static class AssemblyInitializer
+    public class AssemblyBootstrapper
     {
-        public static void InitializeClassesImplementing<T>(string baseDirectory, Action<T> action, Func<Type, T?>? instanceFactory = null)
+        private readonly IAssemblyScanner _assemblyScanner;
+
+        public AssemblyBootstrapper(IAssemblyScanner assemblyScanner)
+        {
+            _assemblyScanner = assemblyScanner;
+        }
+
+        public void UseInstanceOfType<T>(Action<T> action, Func<Type, T?>? instanceFactory = null)
             where T : class
         {
             instanceFactory ??= DefaultCreateInstance;
-            var instances = new AssemblyScanner(baseDirectory)
-                .GetClassesImplementing<T>()
+            var instances = _assemblyScanner
+                .GetClassesOfType<T>()
                 .Select(type => instanceFactory(type)!)
                 .Where(o => o != null);
 

@@ -1,7 +1,7 @@
-﻿using EndpointConfiguration.Contracts;
+﻿using System;
+using EndpointConfiguration.Contracts;
 using Kernel;
 using Microsoft.AspNetCore.Routing;
-using System;
 
 namespace DependencyInjection
 {
@@ -10,7 +10,10 @@ namespace DependencyInjection
         public static void AddFromAssembliesInCurrentDirectory(this IEndpointRouteBuilder endpoints)
         {
             var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            AssemblyInitializer.InitializeClassesImplementing<IConfigureEndpoints>(baseDirectory, instance =>
+            var assemblyScanner = new AssemblyScanner(baseDirectory);
+            var bootstrapper = new AssemblyBootstrapper(assemblyScanner);
+
+            bootstrapper.UseInstanceOfType<IConfigureEndpoints>(instance =>
             {
                 instance.ConfigureEndpoints(endpoints);
             });
