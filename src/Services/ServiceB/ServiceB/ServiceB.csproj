@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Modules\DependencyInjection\DependencyInjection.Contracts\DependencyInjection.Contracts.csproj" />
-    <ProjectReference Include="..\..\..\Modules\EndpointConfiguration\EndpointConfiguration.Contracts\EndpointConfiguration.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\CrossCutting\DependencyInjection\DependencyInjection.Contracts\DependencyInjection.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\CrossCutting\EndpointConfiguration\EndpointConfiguration.Contracts\EndpointConfiguration.Contracts.csproj" />
   </ItemGroup>
 </Project>

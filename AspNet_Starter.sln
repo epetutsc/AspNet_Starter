@@ -26,24 +26,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{012BE9F5-F994-4E89-B4E4-BE2046C602C4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{012BE9F5-F994-4E89-B4E4-BE2046C602C4}"
 	ProjectSection(SolutionItems) = preProject
-		src\Modules\Directory.Build.props = src\Modules\Directory.Build.props
+		src\CrossCutting\Directory.Build.props = src\CrossCutting\Directory.Build.props
 	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MediatR.UI", "MediatR.UI", "{30E3EA16-7653-47A9-86BA-F4D7D5802559}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DependencyInjection", "DependencyInjection", "{1101DF4F-6808-4CDB-B6A4-B73FEAE920BF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjection", "src\Modules\DependencyInjection\DependencyInjection\DependencyInjection.csproj", "{7C58EAA3-4A50-4F02-9657-883F2A9990CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjection", "src\CrossCutting\DependencyInjection\DependencyInjection\DependencyInjection.csproj", "{7C58EAA3-4A50-4F02-9657-883F2A9990CC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjection.Contracts", "src\Modules\DependencyInjection\DependencyInjection.Contracts\DependencyInjection.Contracts.csproj", "{69C3F75E-DA89-4BA7-960A-83178870466C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjection.Contracts", "src\CrossCutting\DependencyInjection\DependencyInjection.Contracts\DependencyInjection.Contracts.csproj", "{69C3F75E-DA89-4BA7-960A-83178870466C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EndpointConfiguration", "EndpointConfiguration", "{2A77CA08-7FA6-48E7-847F-552F6018822C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EndpointConfiguration.Contracts", "src\Modules\EndpointConfiguration\EndpointConfiguration.Contracts\EndpointConfiguration.Contracts.csproj", "{1B840D1C-8BD9-4D0A-98FA-D1E78F39FF11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EndpointConfiguration.Contracts", "src\CrossCutting\EndpointConfiguration\EndpointConfiguration.Contracts\EndpointConfiguration.Contracts.csproj", "{1B840D1C-8BD9-4D0A-98FA-D1E78F39FF11}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EndpointConfiguration", "src\Modules\EndpointConfiguration\EndpointConfiguration\EndpointConfiguration.csproj", "{FB8938C0-A09B-4E94-8146-CCA191D293AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EndpointConfiguration", "src\CrossCutting\EndpointConfiguration\EndpointConfiguration\EndpointConfiguration.csproj", "{FB8938C0-A09B-4E94-8146-CCA191D293AC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kernel", "src\Kernel\Kernel.csproj", "{003079D5-C77D-47C4-A250-A840F34FE066}"
 EndProject
@@ -138,7 +136,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{7CC9C506-9AFC-43EA-AC22-110D312345FA} = {343FDF41-9D4E-44C8-BD6C-776E1713C341}
 		{012BE9F5-F994-4E89-B4E4-BE2046C602C4} = {343FDF41-9D4E-44C8-BD6C-776E1713C341}
-		{30E3EA16-7653-47A9-86BA-F4D7D5802559} = {012BE9F5-F994-4E89-B4E4-BE2046C602C4}
 		{1101DF4F-6808-4CDB-B6A4-B73FEAE920BF} = {012BE9F5-F994-4E89-B4E4-BE2046C602C4}
 		{7C58EAA3-4A50-4F02-9657-883F2A9990CC} = {1101DF4F-6808-4CDB-B6A4-B73FEAE920BF}
 		{69C3F75E-DA89-4BA7-960A-83178870466C} = {1101DF4F-6808-4CDB-B6A4-B73FEAE920BF}
