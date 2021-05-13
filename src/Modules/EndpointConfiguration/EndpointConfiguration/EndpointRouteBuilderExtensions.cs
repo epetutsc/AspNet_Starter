@@ -3,7 +3,7 @@ using EndpointConfiguration.Contracts;
 using Kernel;
 using Microsoft.AspNetCore.Routing;
 
-namespace DependencyInjection
+namespace EndpointConfiguration
 {
     public static class EndpointRouteBuilderExtensions
     {
