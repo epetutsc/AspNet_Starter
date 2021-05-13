@@ -2,9 +2,11 @@
 using EndpointConfiguration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace Main.Web
 {
@@ -26,7 +28,7 @@ namespace Main.Web
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger, EndpointDataSource endpointDataSource)
         {
             if (env.IsDevelopment())
             {
@@ -48,8 +50,19 @@ namespace Main.Web
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.AddFromAssembliesInCurrentDirectory();
+                endpoints.AddFromAssembliesInCurrentDirectory(logger);
             });
+
+            LogAvailableRoutes(logger, endpointDataSource);
+        }
+
+        private static void LogAvailableRoutes(ILogger<Startup> logger, EndpointDataSource endpointDataSource)
+        {
+            logger.LogInformation("Available routes:");
+            foreach (var endpoint in endpointDataSource.Endpoints)
+            {
+                logger.LogInformation(endpoint.DisplayName);
+            }
         }
     }
 }
