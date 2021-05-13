@@ -1,14 +1,15 @@
 ﻿using EndpointConfiguration.Contracts;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
-using System.Diagnostics;
 
-namespace SimpleService
+namespace ServiceC
 {
     internal class EndpointConfiguration : IConfigureEndpoints
     {
         public void ConfigureEndpoints(IEndpointRouteBuilder endpoints)
         {
-            Debugger.Break();
+            endpoints.MapGet("/C", async ctx => await ctx.Response.WriteAsync("SERVICE C"));
         }
     }
 }
