@@ -1,4 +1,5 @@
-﻿using DependencyInjection;
+﻿using System.Text;
+using DependencyInjection;
 using EndpointConfiguration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -58,11 +59,14 @@ namespace Main.Web
 
         private static void LogAvailableRoutes(ILogger<Startup> logger, EndpointDataSource endpointDataSource)
         {
-            logger.LogInformation("Available routes:");
+            var sb = new StringBuilder();
+            sb.AppendLine("Available routes:");
             foreach (var endpoint in endpointDataSource.Endpoints)
             {
-                logger.LogInformation(endpoint.DisplayName);
+                sb.AppendLine(endpoint.DisplayName);
             }
+
+            logger.LogInformation(sb.ToString());
         }
     }
 }
