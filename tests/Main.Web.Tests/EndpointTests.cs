@@ -21,10 +21,26 @@ namespace Main.Web.Tests
         }
 
         [Fact]
-        public void ShouldNotHaveDuplicateEndpoints()
+        public void Main_Web_Should_Not_Have_Duplicate_Endpoints()
         {
             var detector = new DuplicateEndpointDetector(_factory.Services);
-            var endpointData = _factory.Services.GetRequiredService<EndpointDataSource>();
+            var endpointDataSource = _factory.Services.GetRequiredService<EndpointDataSource>();
+
+            GetErrorMessage(detector, endpointDataSource).Should().BeEmpty();
+        }
+
+        [Fact]
+        public void Duplicate_Endpoints_Should_Raise_Error()
+        {
+            var detector = new DuplicateEndpointDetector(_factory.Services);
+            var firstEndpoint = _factory.Services.GetRequiredService<EndpointDataSource>().Endpoints[0];
+            var endpointData = new DefaultEndpointDataSource(firstEndpoint, firstEndpoint);
+
+            GetErrorMessage(detector, endpointData).Should().NotBeEmpty();
+        }
+
+        private static string GetErrorMessage(DuplicateEndpointDetector detector, EndpointDataSource endpointData)
+        {
             endpointData.Endpoints.Count.Should().BePositive();
 
             var duplicates = detector.GetDuplicateEndpoints(endpointData);
@@ -36,7 +52,7 @@ namespace Main.Web.Tests
                 output.AppendLine($"Duplicate route: '{keyValuePair.Key}'. Matches: {allMatches}");
             }
 
-            output.ToString().Should().BeEmpty();
+            return output.ToString();
         }
     }
 }
