@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Kernel;
 
-namespace Kernel
+namespace AssemblyLoading
 {
-    public class AssemblyScanner : IAssemblyScanner
+    internal class AssemblyScanner
     {
         private readonly string _baseDirectory;
 

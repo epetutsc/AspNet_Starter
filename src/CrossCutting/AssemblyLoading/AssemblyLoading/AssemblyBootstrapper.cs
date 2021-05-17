@@ -1,15 +1,22 @@
 ﻿using System;
 using System.Linq;
+using Kernel;
 
-namespace Kernel
+namespace AssemblyLoading
 {
-    public class AssemblyBootstrapper
+    internal class AssemblyBootstrapper : IAssemblyBootstrapper
     {
-        private readonly IAssemblyScanner _assemblyScanner;
+        private readonly AssemblyScanner _assemblyScanner;
 
-        public AssemblyBootstrapper(IAssemblyScanner assemblyScanner)
+        public AssemblyBootstrapper(AssemblyScanner assemblyScanner)
         {
             _assemblyScanner = assemblyScanner;
+        }
+
+        public static IAssemblyBootstrapper For(string baseDirectory)
+        {
+            var assemblyScanner = new AssemblyScanner(baseDirectory);
+            return new AssemblyBootstrapper(assemblyScanner);
         }
 
         public void UseInstanceOfType<T>(Action<T> action, Func<Type, T?>? instanceFactory = null)

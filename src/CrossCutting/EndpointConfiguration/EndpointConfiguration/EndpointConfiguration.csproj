@@ -5,6 +5,7 @@
   </PropertyGroup>
     
   <ItemGroup>
+    <ProjectReference Include="..\..\AssemblyLoading\AssemblyLoading\AssemblyLoading.csproj" />
     <ProjectReference Include="..\EndpointConfiguration.Contracts\EndpointConfiguration.Contracts.csproj" />
   </ItemGroup>
 
