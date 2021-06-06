@@ -1,12 +1,12 @@
-1. Build
-2. Deployment
-3. Logging (Seq, Elastic)
-4. Settings, Secure Settings
-5. Health
-6. Global Exception Handling
-7. Feature Flags
-8. Swagger
-9. Mapping (AutoMapper, Mapster)
+ 1. Build
+ 2. Deployment
+ 3. Logging (Seq, Elastic)
+ 4. Settings, Secure Settings
+ 5. Health
+ 6. Global Exception Handling
+ 7. Feature Flags
+ 8. Swagger
+ 9. Mapping (AutoMapper, Mapster)
 10. ArchUnit
 11. Qowaiv 
 12. AggregateRoot, etc.
