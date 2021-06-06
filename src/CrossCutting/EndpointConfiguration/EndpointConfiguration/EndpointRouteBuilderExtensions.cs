@@ -8,7 +8,7 @@ namespace EndpointConfiguration
 {
     public static class EndpointRouteBuilderExtensions
     {
-        public static void AddFromAssembliesInCurrentDirectory(this IEndpointRouteBuilder endpoints, ILogger? logger = null)
+        public static void AddFromAssembliesInCurrentDirectory(this IEndpointRouteBuilder endpoints, ILogger? logger)
         {
             AssemblyLoader
                 .For(AppDomain.CurrentDomain.BaseDirectory)

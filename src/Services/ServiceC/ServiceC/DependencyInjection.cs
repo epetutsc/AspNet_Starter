@@ -8,6 +8,7 @@ namespace ServiceC
     {
         public void ConfigureServices(IServiceCollection services, IConfiguration configuration)
         {
+            // register dependencies
         }
     }
 }

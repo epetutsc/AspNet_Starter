@@ -19,7 +19,13 @@ namespace AssemblyLoading
             return new AssemblyBootstrapper(assemblyScanner);
         }
 
-        public void UseInstanceOfType<T>(Action<T> action, Func<Type, T?>? instanceFactory = null)
+        public void UseInstanceOfType<T>(Action<T> action)
+            where T : class
+        {
+            UseInstanceOfType<T>(action, null);
+        }
+
+        public void UseInstanceOfType<T>(Action<T> action, Func<Type, T?>? instanceFactory)
             where T : class
         {
             instanceFactory ??= DefaultCreateInstance;
